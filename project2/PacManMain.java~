@@ -1,0 +1,29 @@
+import java.awt.*;
+import javax.swing.*;
+
+/** Alex Cohen
+ *4/5/18
+ *Project 2
+ *This program allows the user to play a game of Pac-Man.
+ */
+
+public class PacManMain{
+  
+  public static void main( String[] args ){
+
+      Paint.buildWindow("PacManMain", 0, 0, 900, 900, Color.BLACK);
+
+	
+      Board board = new Board();
+      
+      PaintAnimator animator = new PaintAnimator(5);
+      animator.animate(board);
+      
+      for ( ; true ; ) {
+   int keypress = Paint.getArrow();
+   board.handleChar(keypress);
+      }
+      
+  }
+    
+}
